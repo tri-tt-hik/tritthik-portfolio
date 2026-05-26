@@ -1,0 +1,46 @@
+.education {
+  background: var(--paper);
+}
+
+.education-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.education-card {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr auto;
+  padding: 1.4rem;
+}
+
+.education-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.education-card p,
+.education-meta span {
+  color: var(--muted);
+}
+
+.education-meta {
+  text-align: right;
+}
+
+.education-meta strong {
+  color: var(--teal);
+  display: block;
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 680px) {
+  .education-card {
+    grid-template-columns: 1fr;
+  }
+
+  .education-meta {
+    text-align: left;
+  }
+}

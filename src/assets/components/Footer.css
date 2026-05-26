@@ -1,0 +1,22 @@
+.footer {
+  align-items: center;
+  background: var(--ink);
+  color: var(--surface);
+  display: flex;
+  font-size: 0.85rem;
+  font-weight: 800;
+  justify-content: space-between;
+  padding: 1.2rem clamp(1rem, 4vw, 4rem);
+}
+
+.footer span:last-child {
+  color: var(--gold-soft);
+}
+
+@media (max-width: 620px) {
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+}

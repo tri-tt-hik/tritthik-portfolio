@@ -1,0 +1,54 @@
+.contact {
+  background: var(--surface);
+}
+
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.contact-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contact-card .section-title {
+  max-width: 760px;
+}
+
+.contact-actions {
+  margin-top: 2rem;
+}
+
+.contact-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-link {
+  color: inherit;
+  display: block;
+  padding: 1.25rem;
+  text-decoration: none;
+}
+
+.contact-link span {
+  color: var(--teal);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.contact-link strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
