@@ -22,6 +22,8 @@
 
 .skill-group {
   --skill-color: var(--teal);
+  --skill-hover-border: rgba(74, 111, 165, 0.35);
+  --skill-pill-bg: #eef2f6;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -35,18 +37,26 @@
 
 .skill-group:nth-child(2) {
   --skill-color: #a85038;
+  --skill-hover-border: rgba(168, 80, 56, 0.35);
+  --skill-pill-bg: #f9edea;
 }
 
 .skill-group:nth-child(3) {
   --skill-color: #213e68;
+  --skill-hover-border: rgba(33, 62, 104, 0.35);
+  --skill-pill-bg: #e9ecf0;
 }
 
 .skill-group:nth-child(4) {
   --skill-color: #bd8f35;
+  --skill-hover-border: rgba(189, 143, 53, 0.35);
+  --skill-pill-bg: #f8f4eb;
 }
 
 .skill-group:nth-child(5) {
   --skill-color: #6d4fb8;
+  --skill-hover-border: rgba(109, 79, 184, 0.35);
+  --skill-pill-bg: #f0eef8;
 }
 
 .skill-group::before {
@@ -61,7 +71,7 @@
 }
 
 .skill-group:hover {
-  border-color: color-mix(in srgb, var(--skill-color), transparent 65%);
+  border-color: var(--skill-hover-border);
   box-shadow: 0 18px 54px rgba(21, 21, 21, 0.12);
   transform: translateY(-7px);
 }
@@ -93,7 +103,7 @@
 }
 
 .skill-group:hover .skill-pill {
-  background: color-mix(in srgb, var(--skill-color), white 88%);
+  background: var(--skill-pill-bg);
 }
 
 .skill-pill:hover {
