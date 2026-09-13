@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { skills } from '../data/portfolioData'
+import InteractiveSkillsCube from './InteractiveSkillsCube'
 import './Skills.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -39,20 +40,26 @@ function Skills() {
 
   return (
     <section id="skills" className="skills-section section" ref={sectionRef}>
-      <div className="section-inner">
-        <span className="section-label">Technical Skills</span>
-        <h2 className="section-title">Tools I work with</h2>
-        <div className="skills-grid">
-          {skillCategories.map(cat => (
-            <article className="skill-group panel" key={cat.label}>
-              <h3>{cat.label}</h3>
-              <div className="skill-pills">
-                {cat.items.map(item => (
-                  <span className="skill-pill" key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
+      <div className="section-inner skills-layout">
+        <div className="skills-content">
+          <span className="section-label">Technical Skills</span>
+          <h2 className="section-title">Tools I work with</h2>
+          <div className="skills-grid">
+            {skillCategories.map(cat => (
+              <article className="skill-group panel" key={cat.label}>
+                <h3>{cat.label}</h3>
+                <div className="skill-pills">
+                  {cat.items.map(item => (
+                    <span className="skill-pill" key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+        
+        <div className="skills-interactive">
+          <InteractiveSkillsCube categories={skillCategories} />
         </div>
       </div>
     </section>
