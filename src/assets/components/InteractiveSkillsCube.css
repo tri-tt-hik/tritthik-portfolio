@@ -103,6 +103,8 @@
   font-size: 0.85rem;
   font-weight: 800;
   box-shadow: 0 2px 8px rgba(74, 111, 165, 0.04);
+}
+
 @media (max-width: 1024px) {
   .giant-cube {
     width: 260px;
