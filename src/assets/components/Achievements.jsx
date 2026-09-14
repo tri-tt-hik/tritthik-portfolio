@@ -30,7 +30,6 @@ function Achievements() {
         </div>
         {achievements.map(item => (
           <article className="achievement-card panel" key={item.title}>
-            <span>National Level</span>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
           </article>
