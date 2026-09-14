@@ -1,5 +1,6 @@
 import { personalInfo } from '../data/portfolioData'
 import './Navbar.css'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   ['About', '#about'],
@@ -20,6 +21,7 @@ function Navbar() {
         {links.map(([label, href]) => (
           <a key={href} href={href}>{label}</a>
         ))}
+        <ThemeToggle />
       </nav>
     </header>
   )

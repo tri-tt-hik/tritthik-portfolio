@@ -2,10 +2,14 @@
   background: var(--surface);
 }
 
+.projects-section .section-inner {
+  width: min(1600px, 100%);
+}
+
 .projects-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .project-card {
@@ -13,8 +17,7 @@
   --cursor-y: 50%;
   --project-a: rgba(22, 109, 111, 0.22);
   --project-b: rgba(189, 143, 53, 0.18);
-  background: rgba(255, 253, 248, 0.9);
-  border: 1px solid var(--line);
+  background: transparent;
   border-radius: 8px;
   box-shadow: var(--shadow);
   min-height: 100%;
@@ -135,6 +138,29 @@
   color: #0f766e;
 }
 
+.project-card-4 {
+  --project-a: rgba(139, 92, 246, 0.24);
+  --project-b: rgba(236, 72, 153, 0.18);
+}
+
+.project-card-4::before {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899, #f43f5e);
+}
+
+.project-card-4:hover {
+  border-color: rgba(139, 92, 246, 0.36);
+}
+
+.project-card-4:hover .card-number {
+  color: #7c3aed;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+}
+
+.project-card-4:hover .tech-tag {
+  background: rgba(139, 92, 246, 0.16);
+  color: #6d28d9;
+}
+
 .card-number {
   color: var(--gold);
   font-size: 2.3rem;
@@ -177,7 +203,7 @@
 .tech-tag {
   background: var(--gold-soft);
   border-radius: 999px;
-  color: #6a4b0e;
+  color: var(--gold);
   font-size: 0.72rem;
   font-weight: 900;
   padding: 0.35rem 0.62rem;

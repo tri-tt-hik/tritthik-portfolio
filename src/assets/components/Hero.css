@@ -5,6 +5,7 @@
   min-height: 100vh;
   padding-top: 7rem;
   position: relative;
+  overflow: hidden;
 }
 
 

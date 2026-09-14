@@ -60,9 +60,8 @@
 }
 
 .focus-card {
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.92), rgba(255, 253, 248, 0.72)),
-    linear-gradient(135deg, rgba(22, 109, 111, 0.12), rgba(189, 143, 53, 0.1));
+  background: var(--surface);
+  border: 1px solid var(--line);
   padding: 1.25rem;
   position: relative;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;

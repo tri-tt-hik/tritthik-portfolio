@@ -30,11 +30,26 @@ export const education = [
 
 export const experience = [
   {
+    role: "AI Software Engineer Trainee Intern",
+    company: "DriveThruData LLP, Chennai",
+    year: "May 2026 – Jul 2026",
+    desc: "AI-powered hospital assistance system and workflow automation.",
+    details: [
+      "Contributed to an AI-powered hospital assistance system that let doctors review patient medical records, view AI-generated insights, and compare current findings against automatically retrieved historical reports.",
+      "Built workflow support for capturing prescriptions and doctor comments, feeding structured data downstream into automated invoice generation for the management team.",
+      "Integrated invoice generation with the hospital's ERP system, supporting dual payment paths – insurance-based and self-pay/cash – for patients and insurance providers.",
+      "Enabled the financial team to audit billing documents and surface financial insights directly through the platform."
+    ],
+    github: "https://github.com/tri-tt-hik/DriveThru_Internship_Work"
+  },
+  {
     role: "Web Team Member",
     company: "ICCIDS 2026 International Conference",
     year: "2026",
-    desc:
-      "Developed and maintained the official conference website, focusing on high availability, clear navigation, and a smooth user experience."
+    desc: "Developed and maintained the official conference website, focusing on high availability, clear navigation, and a smooth user experience.",
+    details: [
+      "Designed the official website for ICCIDS 2026, coordinating with the organizing committee to represent conference tracks, schedules, and submission guidelines for an international academic audience."
+    ]
   }
 ]
 
@@ -62,6 +77,16 @@ export const focusAreas = [
 ]
 
 export const projects = [
+  {
+    title: "AI-Powered Medical Document Processing Workflow Platform (Internship)",
+    desc: "Built a visual, node-based workflow platform for configuring AI-driven medical document processing pipelines without engineering support.",
+    highlights: [
+      "Implemented a drag-and-drop DAG workflow model using ReactFlow for modular pipeline composition across ingestion, analysis, and reporting stages.",
+      "Connected the workflow engine to backend REST APIs to link AI inference services with downstream ERP and billing systems."
+    ],
+    tech: ["React", "ReactFlow", "Python", "REST APIs", "JavaScript"],
+    github: "https://github.com/tri-tt-hik/DriveThru_Internship_Work"
+  },
   {
     title: "GAN-based Monet Style Image Generation",
     desc:
@@ -99,8 +124,13 @@ export const projects = [
 
 export const achievements = [
   {
-    title: "National Speed Slalom Skating Championship",
+    title: "Paper Presentation",
     desc:
-      "Represented Tamil Nadu at the national level, demonstrating discipline, endurance, and competitive excellence."
+      'Won First Prize at the paper presentation competition conducted by Madras Institute of Technology, for the paper titled "AI-Based Fire Station Location Optimization for Enhanced Fire and Rescue Coverage in Tamil Nadu."'
+  },
+  {
+    title: "Roller Skating",
+    desc:
+      "Represented Tamil Nadu at the National Speed Slalom Skating Championship, demonstrating discipline, endurance, and competitive excellence."
   }
 ]

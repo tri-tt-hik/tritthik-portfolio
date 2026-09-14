@@ -168,3 +168,38 @@ Before considering a frontend task complete:
 13. Test reduced-motion behavior.
 14. Perform a final visual critique.
 15. Remove one unnecessary decorative element.
+
+
+## Magic UI Integration
+
+When building React interfaces, Magic UI may be used as a source of
+high-quality animated components.
+
+Before implementing a custom animated component:
+
+1. Search the Magic UI MCP registry for an appropriate component.
+2. Inspect the component's implementation and dependencies.
+3. Determine whether it fits the current visual direction.
+4. Use the component only if it improves the design.
+5. Adapt its styling to the project's existing design system.
+
+Do not blindly use Magic UI components.
+
+Do not use multiple visually competing Magic UI effects in the same section.
+
+Magic UI should provide implementation primitives, not determine the entire
+visual identity.
+
+Prefer:
+- one strong visual effect
+- subtle supporting interactions
+- consistent spacing
+- consistent typography
+- restrained motion
+
+Avoid:
+- stacking multiple glowing effects
+- excessive animated borders
+- random particles
+- unnecessary gradients
+- generic "AI SaaS" aesthetics

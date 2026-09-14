@@ -10,7 +10,7 @@
 }
 
 .footer span:last-child {
-  color: var(--gold-soft);
+  color: var(--teal-soft);
 }
 
 @media (max-width: 620px) {

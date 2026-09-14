@@ -4,6 +4,8 @@ import gsap from 'gsap'
 import { personalInfo } from '../data/portfolioData'
 import hoverBg from '../images/hover_bg.jpg'
 import FluidCodeReveal from './FluidCodeReveal/FluidCodeReveal'
+import { Particles } from './magicui/Particles'
+import { TypingAnimation } from './magicui/TypingAnimation'
 import './Hero.css'
 
 function Hero() {
@@ -24,9 +26,21 @@ function Hero() {
       ref={sectionRef}
     >
       <FluidCodeReveal imageUrl={hoverBg} />
-      <div className="hero-inner section-inner">
+      
+      <Particles 
+        className="absolute top-0 left-0 w-full h-full z-0" 
+        quantity={400} 
+        ease={40} 
+        staticity={10000}
+        color="#ffffff" 
+        refresh 
+      />
+
+      <div className="hero-inner section-inner relative z-10">
         <div className="hero-content">
-          <span className="hero-kicker">AI / Computer Vision / Full-Stack</span>
+          <span className="hero-kicker">
+            <TypingAnimation text="> _ AI / Computer Vision / Full-Stack" duration={50} />
+          </span>
           <h1 className="hero-name" aria-label={personalInfo.name}>
             {personalInfo.name.split(' ').map(part => (
               <span key={part}>{part}</span>
@@ -35,7 +49,7 @@ function Hero() {
           <p className="hero-role">{personalInfo.role}</p>
           <p className="hero-copy">{personalInfo.tagline}</p>
           <div className="hero-actions button-row">
-            <a className="btn-primary" href="#projects">View Projects</a>
+            <a className="btn-secondary" href="#projects">View Projects</a>
             <a className="btn-secondary" href={`mailto:${personalInfo.email}`}>Contact Me</a>
           </div>
           <div className="hero-metrics" aria-label="Resume highlights">
@@ -53,8 +67,6 @@ function Hero() {
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   )

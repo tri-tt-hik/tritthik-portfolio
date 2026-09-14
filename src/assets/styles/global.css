@@ -1,19 +1,39 @@
 :root {
-  --paper: #fafafa;
+  --paper: #f0f4f8;
   --surface: #ffffff;
-  --surface-strong: #ffffff;
-  --ink: #4a6fa5;
-  --muted: #c0c0c0;
-  --line: #d4e4f7;
-  --gold: #4a6fa5;
-  --gold-soft: #d4e4f7;
-  --teal: #4a6fa5;
-  --teal-soft: #d4e4f7;
-  --blue: #4a6fa5;
-  --clay: #c0c0c0;
-  --shadow: 0 22px 70px rgba(74, 111, 165, 0.12);
+  --surface-strong: #e2e8f0;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #cbd5e1;
+  --gold: #0ea5e9;
+  --gold-soft: #e0f2fe;
+  --teal: #10b981;
+  --teal-soft: #d1fae5;
+  --blue: #0284c7;
+  --clay: #94a3b8;
+  --shadow: 0 22px 70px rgba(15, 23, 42, 0.08);
+  --navbar-bg: rgba(247, 244, 237, 0.78);
+  --navbar-border: rgba(226, 221, 209, 0.8);
   --font-heading: 'DejaVu Sans', DejaVuSans, sans-serif;
   --font-body: 'DejaVu Sans', DejaVuSans, sans-serif;
+}
+
+.dark {
+  --paper: #020617;
+  --surface: rgba(14, 165, 233, 0.07);
+  --surface-strong: rgba(14, 165, 233, 0.12);
+  --ink: #f1f5f9;
+  --muted: #94a3b8;
+  --line: rgba(56, 189, 248, 0.15);
+  --gold: #38bdf8;
+  --gold-soft: #0369a1;
+  --teal: #34d399;
+  --teal-soft: #047857;
+  --blue: #38bdf8;
+  --clay: #475569;
+  --shadow: 0 22px 70px rgba(2, 132, 199, 0.15);
+  --navbar-bg: rgba(2, 6, 23, 0.78);
+  --navbar-border: rgba(56, 189, 248, 0.15);
 }
 
 * {
@@ -132,7 +152,7 @@ main {
 }
 
 .panel {
-  background: rgba(255, 253, 248, 0.78);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);

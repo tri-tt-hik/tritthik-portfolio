@@ -4,16 +4,18 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { skills } from '../data/portfolioData'
 import InteractiveSkillsCube from './InteractiveSkillsCube'
+import { MagicCard } from './magicui/MagicCard'
+import { Particles } from './magicui/Particles'
 import './Skills.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const skillCategories = [
-  { label: 'Programming Languages', items: skills.languages },
-  { label: 'Machine Learning & AI', items: skills.aiml },
-  { label: 'Frameworks & Libraries', items: skills.frameworks },
-  { label: 'Web Technologies', items: skills.web },
-  { label: 'Big Data & Tools', items: skills.tools }
+  { label: 'Programming Languages', items: skills.languages, color: 'var(--teal)' },
+  { label: 'Machine Learning & AI', items: skills.aiml, color: '#a85038' },
+  { label: 'Frameworks & Libraries', items: skills.frameworks, color: 'var(--blue)' },
+  { label: 'Web Technologies', items: skills.web, color: '#bd8f35' },
+  { label: 'Big Data & Tools', items: skills.tools, color: '#6d4fb8' }
 ]
 
 function Skills() {
@@ -39,21 +41,34 @@ function Skills() {
   }, { scope: sectionRef })
 
   return (
-    <section id="skills" className="skills-section section" ref={sectionRef}>
-      <div className="section-inner skills-layout">
+    <section id="skills" className="skills-section section relative overflow-hidden" ref={sectionRef}>
+      <Particles 
+        className="absolute inset-0 z-0" 
+        quantity={300} 
+        ease={40} 
+        color="#ffffff" 
+        refresh 
+      />
+      <div className="section-inner skills-layout relative z-10">
         <div className="skills-content">
           <span className="section-label">Technical Skills</span>
           <h2 className="section-title">Tools I work with</h2>
           <div className="skills-grid">
             {skillCategories.map(cat => (
-              <article className="skill-group panel" key={cat.label}>
-                <h3>{cat.label}</h3>
-                <div className="skill-pills">
-                  {cat.items.map(item => (
-                    <span className="skill-pill" key={item}>{item}</span>
-                  ))}
-                </div>
-              </article>
+              <MagicCard
+                key={cat.label}
+                className="skill-group panel flex flex-col bg-surface/50 border-line/50 p-6"
+                gradientColor={cat.color}
+              >
+                <article>
+                  <h3>{cat.label}</h3>
+                  <div className="skill-pills">
+                    {cat.items.map(item => (
+                      <span className="skill-pill" key={item}>{item}</span>
+                    ))}
+                  </div>
+                </article>
+              </MagicCard>
             ))}
           </div>
         </div>

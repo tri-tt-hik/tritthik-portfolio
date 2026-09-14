@@ -26,7 +26,7 @@ function Achievements() {
       <div className="section-inner achievements-grid">
         <div>
           <span className="section-label">Achievement</span>
-          <h2 className="section-title">Competitive discipline beyond code</h2>
+          <h2 className="section-title">Competitive discipline</h2>
         </div>
         {achievements.map(item => (
           <article className="achievement-card panel" key={item.title}>

@@ -31,7 +31,7 @@ function Contact() {
             Based in {personalInfo.location}. Open to AI, computer vision, full-stack, and conference or product web work.
           </p>
           <div className="button-row contact-actions">
-            <a className="btn-primary" href={`mailto:${personalInfo.email}`}>Email Me</a>
+            <a className="btn-secondary" href={`mailto:${personalInfo.email}`}>Email Me</a>
             <a className="btn-secondary" href={personalInfo.github} target="_blank" rel="noreferrer">GitHub</a>
             <a className="btn-secondary" href={personalInfo.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
