@@ -1,19 +1,19 @@
 import { IconMoon, IconSun } from '@tabler/icons-react';
 import { useTheme } from '../../context/ThemeContext';
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-surface-strong hover:bg-gold-soft transition-colors flex items-center justify-center border border-line"
+      className={`theme-toggle flex items-center justify-center transition-colors ${className || ''}`}
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <IconSun className="w-5 h-5 text-gold" />
+        <IconSun className="w-4 h-4 text-white hover:text-gray-300" />
       ) : (
-        <IconMoon className="w-5 h-5 text-ink" />
+        <IconMoon className="w-4 h-4 text-gray-400 hover:text-white" />
       )}
     </button>
   );

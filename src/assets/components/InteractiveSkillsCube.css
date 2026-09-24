@@ -47,16 +47,22 @@
   backface-visibility: hidden;
 }
 
-.cube-front  { transform: rotateY(  0deg) translateZ(160px); --face-color: var(--ink); }
-.cube-back   { transform: rotateY(180deg) translateZ(160px); --face-color: var(--teal); }
-.cube-right  { transform: rotateY( 90deg) translateZ(160px); --face-color: #a85038; }
-.cube-left   { transform: rotateY(-90deg) translateZ(160px); --face-color: var(--blue); }
-.cube-top    { transform: rotateX( 90deg) translateZ(160px); --face-color: #bd8f35; }
-.cube-bottom { transform: rotateX(-90deg) translateZ(160px); --face-color: #6d4fb8; }
+.cube-front  { transform: rotateY(  0deg) translateZ(160px); --face-color: var(--ink); --face-gradient: linear-gradient(135deg, #9ca3af 0%, #4b5563 100%); }
+.cube-back   { transform: rotateY(180deg) translateZ(160px); --face-color: var(--teal); --face-gradient: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%); }
+.cube-right  { transform: rotateY( 90deg) translateZ(160px); --face-color: #a85038; --face-gradient: linear-gradient(135deg, #fb923c 0%, #c2410c 100%); }
+.cube-left   { transform: rotateY(-90deg) translateZ(160px); --face-color: var(--blue); --face-gradient: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%); }
+.cube-top    { transform: rotateX( 90deg) translateZ(160px); --face-color: #bd8f35; --face-gradient: linear-gradient(135deg, #facc15 0%, #a16207 100%); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(160px); --face-color: #6d4fb8; --face-gradient: linear-gradient(135deg, #c084fc 0%, #7e22ce 100%); }
 
 /* Theme application to face */
-.giant-cube-face:not(.title-face) {
-  border-top: 5px solid var(--face-color);
+.giant-cube-face:not(.title-face)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--face-gradient, var(--face-color));
 }
 
 /* Typography inside faces */
@@ -79,7 +85,11 @@
 }
 
 .giant-cube-face h4 {
-  color: var(--face-color, var(--ink));
+  background: var(--face-gradient, var(--ink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1.5rem;

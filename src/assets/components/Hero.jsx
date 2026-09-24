@@ -6,6 +6,7 @@ import hoverBg from '../images/hover_bg.jpg'
 import FluidCodeReveal from './FluidCodeReveal/FluidCodeReveal'
 import { Particles } from './magicui/Particles'
 import { TypingAnimation } from './magicui/TypingAnimation'
+import ShinyText from './ShinyText'
 import './Hero.css'
 
 function Hero() {
@@ -42,9 +43,30 @@ function Hero() {
             <TypingAnimation text="> _ AI / Computer Vision / Full-Stack" duration={50} />
           </span>
           <h1 className="hero-name" aria-label={personalInfo.name}>
-            {personalInfo.name.split(' ').map(part => (
-              <span key={part}>{part}</span>
-            ))}
+            <span style={{ whiteSpace: 'nowrap' }}>
+              {['A', 'S', 'Tritthik'].map((part, index) => (
+                <ShinyText 
+                  key={part} 
+                  text={part + (index < 2 ? '\u00A0' : '')}
+                  speed={3}
+                  color="var(--ink)"
+                  shineColor="var(--clay)"
+                  spread={100}
+                  yoyo={true}
+                  pauseOnHover={true}
+                />
+              ))}
+            </span>
+            {' '}
+            <ShinyText 
+              text="Thilagar"
+              speed={3}
+              color="var(--ink)"
+              shineColor="var(--clay)"
+              spread={100}
+              yoyo={true}
+              pauseOnHover={true}
+            />
           </h1>
           <p className="hero-role">{personalInfo.role}</p>
           <p className="hero-copy">{personalInfo.tagline}</p>

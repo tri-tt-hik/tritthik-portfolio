@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { achievements } from '../data/portfolioData'
+import GlareHover from './GlareHover'
 import './Achievements.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -11,7 +12,7 @@ function Achievements() {
   const sectionRef = useRef(null)
 
   useGSAP(() => {
-    gsap.from('.achievement-card', {
+    gsap.from('.achievement-card-wrapper', {
       scrollTrigger: { trigger: sectionRef.current, start: 'top 72%' },
       opacity: 0,
       y: 36,
@@ -29,10 +30,20 @@ function Achievements() {
           <h2 className="section-title">Competitive discipline</h2>
         </div>
         {achievements.map(item => (
-          <article className="achievement-card panel" key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
-          </article>
+          <GlareHover 
+            key={item.title} 
+            className="achievement-card-wrapper panel" 
+            background="var(--paper)" 
+            borderColor="var(--line)" 
+            glareColor="#14b8a6" 
+            glareOpacity={0.2} 
+            style={{ padding: '0' }}
+          >
+            <article className="achievement-card">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          </GlareHover>
         ))}
       </div>
     </section>

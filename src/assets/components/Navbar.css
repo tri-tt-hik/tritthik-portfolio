@@ -1,56 +1,80 @@
-.navbar {
-  align-items: center;
-  backdrop-filter: blur(18px);
-  background: var(--navbar-bg);
-  border-bottom: 1px solid var(--navbar-border);
-  display: flex;
-  justify-content: space-between;
-  left: 0;
-  padding: 0.8rem clamp(1rem, 4vw, 4rem);
+.navbar-wrapper {
   position: fixed;
+  top: 1.5rem;
+  left: 0;
   right: 0;
-  top: 0;
-  z-index: 20;
-}
-
-.navbar-logo {
-  color: var(--ink);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-
-.navbar-links {
-  align-items: center;
   display: flex;
-  gap: clamp(0.7rem, 2vw, 1.4rem);
+  justify-content: center;
+  z-index: 50;
+  pointer-events: none; /* allow clicking through empty space */
 }
 
-.navbar-links a {
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
+.navbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  background: rgba(70, 70, 75, 0.65); /* Grey glass effect */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.4rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  gap: 0.2rem;
+}
+
+.navbar-link {
+  color: #a1a1aa;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: color 0.2s ease;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
 }
 
-.navbar-links a:hover {
-  color: var(--teal);
+.navbar-link:hover {
+  color: #fff;
 }
 
-@media (max-width: 760px) {
+.navbar-link.active {
+  background: #27272a;
+  color: #fff;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 0.4rem;
+}
+
+.navbar-theme-toggle {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: #a1a1aa;
+}
+
+.navbar-theme-toggle:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
   .navbar {
-    align-items: flex-start;
-    gap: 0.7rem;
-    position: absolute;
+    padding: 0.3rem;
+    gap: 0.1rem;
+    max-width: 95vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .navbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .navbar-links a {
+  .navbar-link {
     font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
 }

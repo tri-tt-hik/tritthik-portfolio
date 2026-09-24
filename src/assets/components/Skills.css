@@ -22,6 +22,7 @@
 
 .skill-group {
   --skill-color: var(--teal);
+  --skill-gradient: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%);
   --skill-hover-border: rgba(74, 111, 165, 0.35);
   --skill-pill-bg: #eef2f6;
   background: transparent;
@@ -36,30 +37,34 @@
 
 .skill-group:nth-child(2) {
   --skill-color: #a85038;
+  --skill-gradient: linear-gradient(135deg, #fb923c 0%, #c2410c 100%);
   --skill-hover-border: rgba(168, 80, 56, 0.35);
   --skill-pill-bg: #f9edea;
 }
 
 .skill-group:nth-child(3) {
   --skill-color: var(--blue);
+  --skill-gradient: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%);
   --skill-hover-border: rgba(56, 189, 248, 0.35);
   --skill-pill-bg: #e0f2fe;
 }
 
 .skill-group:nth-child(4) {
   --skill-color: #bd8f35;
+  --skill-gradient: linear-gradient(135deg, #facc15 0%, #a16207 100%);
   --skill-hover-border: rgba(189, 143, 53, 0.35);
   --skill-pill-bg: #f8f4eb;
 }
 
 .skill-group:nth-child(5) {
   --skill-color: #6d4fb8;
+  --skill-gradient: linear-gradient(135deg, #c084fc 0%, #7e22ce 100%);
   --skill-hover-border: rgba(109, 79, 184, 0.35);
   --skill-pill-bg: #f0eef8;
 }
 
 .skill-group::before {
-  background: var(--skill-color);
+  background: var(--skill-gradient);
   border-radius: 999px;
   content: "";
   height: 5px;
@@ -78,7 +83,11 @@
 .skill-group h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--skill-color);
+  background: var(--skill-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 1.25rem;
 }
 
